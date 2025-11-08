@@ -229,6 +229,80 @@ Tweets table:
 - Tweet 2 has length = 33 → invalid
 
 ---
+## 👥 Replace Employee ID With The Unique Identifier
+
+### Table: `Employees`
+<table>
+<tr><th>Column Name</th><th>Type</th></tr>
+<tr><td>id</td><td>int</td></tr>
+<tr><td>name</td><td>varchar</td></tr>
+</table>
+
+`id` is the primary key for this table.  
+Each row contains the ID and name of an employee in a company.
+
+---
+
+### Table: `EmployeeUNI`
+<table>
+<tr><th>Column Name</th><th>Type</th></tr>
+<tr><td>id</td><td>int</td></tr>
+<tr><td>unique_id</td><td>int</td></tr>
+</table>
+
+`(id, unique_id)` is the primary key for this table.  
+Each row contains the ID and corresponding unique ID of an employee.
+
+---
+
+### 🧠 Task
+
+Show the **unique ID of each employee**.  
+- If a user does not have a unique ID, show `NULL`.  
+- Return the result table in any order.
+
+---
+
+### Example 1
+
+**Input:**  
+
+Employees table:
+<table>
+<tr><th>id</th><th>name</th></tr>
+<tr><td>1</td><td>Alice</td></tr>
+<tr><td>7</td><td>Bob</td></tr>
+<tr><td>11</td><td>Meir</td></tr>
+<tr><td>90</td><td>Winston</td></tr>
+<tr><td>3</td><td>Jonathan</td></tr>
+</table>
+
+EmployeeUNI table:
+<table>
+<tr><th>id</th><th>unique_id</th></tr>
+<tr><td>3</td><td>1</td></tr>
+<tr><td>11</td><td>2</td></tr>
+<tr><td>90</td><td>3</td></tr>
+</table>
+
+**Output:**  
+<table>
+<tr><th>unique_id</th><th>name</th></tr>
+<tr><td>null</td><td>Alice</td></tr>
+<tr><td>null</td><td>Bob</td></tr>
+<tr><td>2</td><td>Meir</td></tr>
+<tr><td>3</td><td>Winston</td></tr>
+<tr><td>1</td><td>Jonathan</td></tr>
+</table>
+
+**Explanation:**  
+- Alice and Bob do not have a unique ID → `NULL`.  
+- Meir’s unique ID is 2.  
+- Winston’s unique ID is 3.  
+- Jonathan’s unique ID is 1.
+
+---
+
 
 
 
