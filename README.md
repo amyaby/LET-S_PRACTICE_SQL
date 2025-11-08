@@ -136,3 +136,54 @@ World table:
 <tr><td>Afghanistan</td><td>25500100</td><td>652230</td></tr>
 <tr><td>Algeria</td><td>37100000</td><td>2381741</td></tr>
 </table>
+
+## 🧾 Article Views – Authors Who Viewed Their Own Articles
+
+### Table: `Views`
+<table>
+<tr><th>Column Name</th><th>Type</th></tr>
+<tr><td>article_id</td><td>int</td></tr>
+<tr><td>author_id</td><td>int</td></tr>
+<tr><td>viewer_id</td><td>int</td></tr>
+<tr><td>view_date</td><td>date</td></tr>
+</table>
+
+There is **no primary key** (column with unique values) for this table — it may contain duplicate rows.  
+Each row indicates that a certain viewer viewed an article (written by a specific author) on a specific date.  
+
+Note: if `author_id` and `viewer_id` are equal, it means the **author viewed their own article**.
+
+---
+
+### 🧠 Task
+
+Write a solution to find all **authors who viewed at least one of their own articles**.  
+Return the result table **sorted by `id` in ascending order**.
+
+---
+
+### Example 1
+
+**Input:**  
+Views table:
+<table>
+<tr><th>article_id</th><th>author_id</th><th>viewer_id</th><th>view_date</th></tr>
+<tr><td>1</td><td>3</td><td>5</td><td>2019-08-01</td></tr>
+<tr><td>1</td><td>3</td><td>6</td><td>2019-08-02</td></tr>
+<tr><td>2</td><td>7</td><td>7</td><td>2019-08-01</td></tr>
+<tr><td>2</td><td>7</td><td>6</td><td>2019-08-02</td></tr>
+<tr><td>4</td><td>7</td><td>1</td><td>2019-07-22</td></tr>
+<tr><td>3</td><td>4</td><td>4</td><td>2019-07-21</td></tr>
+<tr><td>3</td><td>4</td><td>4</td><td>2019-07-21</td></tr>
+</table>
+
+**Output:**  
+<table>
+<tr><th>id</th></tr>
+<tr><td>4</td></tr>
+<tr><td>7</td></tr>
+</table>
+
+---
+
+
