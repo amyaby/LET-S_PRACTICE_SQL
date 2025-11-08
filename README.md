@@ -185,5 +185,50 @@ Views table:
 </table>
 
 ---
+## 🐦 Invalid Tweets
+
+### Table: `Tweets`
+<table>
+<tr><th>Column Name</th><th>Type</th></tr>
+<tr><td>tweet_id</td><td>int</td></tr>
+<tr><td>content</td><td>varchar</td></tr>
+</table>
+
+`tweet_id` is the primary key for this table.  
+`content` consists of alphanumeric characters, '!', or spaces, and no other special characters.  
+
+This table contains all tweets in a social media app.
+
+---
+
+### 🧠 Task
+
+A tweet is **invalid** if the number of characters in its `content` is **strictly greater than 15**.  
+Write a solution to find the **IDs of invalid tweets**. Return the result table in any order.
+
+---
+
+### Example 1
+
+**Input:**  
+Tweets table:
+<table>
+<tr><th>tweet_id</th><th>content</th></tr>
+<tr><td>1</td><td>Let us Code</td></tr>
+<tr><td>2</td><td>More than fifteen chars are here!</td></tr>
+</table>
+
+**Output:**  
+<table>
+<tr><th>tweet_id</th></tr>
+<tr><td>2</td></tr>
+</table>
+
+**Explanation:**  
+- Tweet 1 has length = 11 → valid  
+- Tweet 2 has length = 33 → invalid
+
+---
+
 
 
