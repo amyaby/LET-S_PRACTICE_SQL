@@ -302,6 +302,78 @@ EmployeeUNI table:
 - Jonathan’s unique ID is 1.
 
 ---
+## 🛒Product Sales Analysis I
+
+### Table: `Sales`
+<table>
+<tr><th>Column Name</th><th>Type</th></tr>
+<tr><td>sale_id</td><td>int</td></tr>
+<tr><td>product_id</td><td>int</td></tr>
+<tr><td>year</td><td>int</td></tr>
+<tr><td>quantity</td><td>int</td></tr>
+<tr><td>price</td><td>int</td></tr>
+</table>
+
+- `(sale_id, year)` is the primary key.  
+- `product_id` is a foreign key referencing the `Product` table.  
+- Each row represents a sale of a product in a certain year, with a price per unit.
+
+---
+
+### Table: `Product`
+<table>
+<tr><th>Column Name</th><th>Type</th></tr>
+<tr><td>product_id</td><td>int</td></tr>
+<tr><td>product_name</td><td>varchar</td></tr>
+</table>
+
+- `product_id` is the primary key.  
+- Each row indicates the name of a product.
+
+---
+
+### 🧠 Task
+
+Report the **`product_name`**, **`year`**, and **`price`** for each `sale_id` in the `Sales` table.  
+Return the result table in any order.
+
+---
+
+### Example 1
+
+**Input:**  
+
+Sales table:
+<table>
+<tr><th>sale_id</th><th>product_id</th><th>year</th><th>quantity</th><th>price</th></tr>
+<tr><td>1</td><td>100</td><td>2008</td><td>10</td><td>5000</td></tr>
+<tr><td>2</td><td>100</td><td>2009</td><td>12</td><td>5000</td></tr>
+<tr><td>7</td><td>200</td><td>2011</td><td>15</td><td>9000</td></tr>
+</table>
+
+Product table:
+<table>
+<tr><th>product_id</th><th>product_name</th></tr>
+<tr><td>100</td><td>Nokia</td></tr>
+<tr><td>200</td><td>Apple</td></tr>
+<tr><td>300</td><td>Samsung</td></tr>
+</table>
+
+**Output:**  
+<table>
+<tr><th>product_name</th><th>year</th><th>price</th></tr>
+<tr><td>Nokia</td><td>2008</td><td>5000</td></tr>
+<tr><td>Nokia</td><td>2009</td><td>5000</td></tr>
+<tr><td>Apple</td><td>2011</td><td>9000</td></tr>
+</table>
+
+**Explanation:**  
+- Sale 1 → Nokia sold in 2008 for 5000.  
+- Sale 2 → Nokia sold in 2009 for 5000.  
+- Sale 7 → Apple sold in 2011 for 9000.
+
+---
+
 
 
 
